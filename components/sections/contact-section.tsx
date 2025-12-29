@@ -95,11 +95,11 @@ function ContactForm() {
 
   const emailLabel =
     language === "en"
-      ? "Visitors email address"
+      ? "Your email address"
       : "Vaša email adresa";
 
   const emailPlaceholder =
-    language === "en" ? "you@example.com" : "vi@primjer.com";
+    language === "en" ? "Contact" : "Kontakt";
 
   const descriptionRequiredMessage =
     language === "en"
