@@ -3,6 +3,8 @@ import Image from "next/image";
 import { SectionShell } from "@/components/layout/section-shell";
 import { ScrollToContactCta } from "@/components/layout/scroll-to-contact-cta";
 
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 /**
  * HeroSection
  *
@@ -23,7 +25,7 @@ export function HeroSection() {
       >
         {/* Background image */}
         <Image
-          src="/images/hero-bg.jpg"
+          src={`${prefix}/images/hero-bg.jpg`}
           alt="Dimimont Home-Care project background"
           fill
           priority

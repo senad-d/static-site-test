@@ -1,3 +1,5 @@
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export type Project = {
   id: string;
   title: string;
@@ -20,7 +22,10 @@ export const projects: Project[] = [
       "Dimimont helped prioritize the project within a long repair list, proposed a pergola design that fit the existing house and garden, and handled all structural and finishing work with minimal disruption.",
     results:
       "A solid, beautifully finished pergola that felt immediately safe and welcoming. The homeowners reported spending significantly more time outside and worrying less about the elements.",
-    imagePaths: ["/project-images/project1-1.jpg", "/project-images/project1-2.jpg"],
+    imagePaths: [
+      `${prefix}/project-images/project1-1.jpg`,
+      `${prefix}/project-images/project1-2.jpg`,
+    ],
   },
   {
     id: "safer-balcony-shutter-repair-zagreb",
@@ -33,7 +38,10 @@ export const projects: Project[] = [
       "Dimimont inspected the balcony, replaced weakened elements, reinforced railings to modern safety expectations, and repaired or replaced aging shutters with minimal visual change to the facade.",
     results:
       "A balcony the homeowner once avoided became a comfortable place for everyday use. She reported sleeping better knowing the structure was safe.",
-    imagePaths: ["/project-images/project2-1.jpg", "/project-images/project2-2.jpg"],
+    imagePaths: [
+      `${prefix}/project-images/project2-1.jpg`,
+      `${prefix}/project-images/project2-2.jpg`,
+    ],
   },
   {
     id: "coastal-facade-refresh-primorje",
@@ -46,7 +54,7 @@ export const projects: Project[] = [
       "Dimimont repaired cracked plaster, treated exposed areas, and applied a weather-resistant coating and repainting system designed for coastal conditions.",
     results:
       "The house regained a clean, looked-after appearance and gained an extra layer of protection, reducing the stress of each new storm forecast.",
-    imagePaths: ["/project-images/project3-1.jpg"],
+    imagePaths: [`${prefix}/project-images/project3-1.jpg`],
   },
   {
     id: "multi-room-interior-refresh-istria",
@@ -59,6 +67,6 @@ export const projects: Project[] = [
       "Dimimont planned the work in calm, manageable phases, updating surfaces, improving lighting and adjusting storage with special care for accessibility and ease of cleaning.",
     results:
       "The couple reported feeling more relaxed and proud to invite family over, noting that the home felt brighter, safer and easier to maintain.",
-    imagePaths: ["/project-images/project4-1.jpg"],
+    imagePaths: [`${prefix}/project-images/project4-1.jpg`],
   },
 ];
