@@ -9,7 +9,7 @@ export function Logo({ className }: { className?: string }) {
   const { resolvedTheme } = useTheme();
 
   const logoFile =
-    resolvedTheme === "dark" ? "/images/logo-white.png" : "/images/logo-black.png";
+    resolvedTheme === "dark" ? "/images/DimiMont-logo-light.png" : "/images/DimiMont-logo-dark.png";
 
   const src = `${prefix}${logoFile}`;
 
@@ -20,7 +20,7 @@ export function Logo({ className }: { className?: string }) {
         alt="DimiMont Home-Care logo"
         width={160}
         height={40}
-        style={{ width: "auto", height: "auto" }}
+        style={{ height: "50px", width: "auto" }}
         priority
       />
     </div>
