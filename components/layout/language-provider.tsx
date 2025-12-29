@@ -29,22 +29,24 @@ type LanguageProviderProps = {
 };
 
 export function LanguageProvider({ children }: LanguageProviderProps) {
-  const [language, setLanguageState] = useState<Language>(() => {
-    if (typeof window === "undefined") {
-      return "en";
-    }
+  // Default to English during SSR and initial client render to keep
+  // server and client markup in sync and avoid hydration mismatches.
+  const [language, setLanguageState] = useState<Language>("en");
+
+  // On mount, read any stored language from localStorage and sync state.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
 
     try {
       const stored = window.localStorage.getItem(STORAGE_KEY);
       if (isValidLanguage(stored)) {
-        return stored;
+        // eslint-disable-next-line
+        setLanguageState(stored);
       }
     } catch {
       // Ignore read errors and fall back to default "en".
     }
-
-    return "en";
-  });
+  }, []);
 
   // Persist language to localStorage whenever it changes.
   useEffect(() => {
