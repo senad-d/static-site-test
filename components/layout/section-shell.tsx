@@ -6,7 +6,7 @@ import { Container } from "./container";
 /**
  * SectionShell
  *
- * Semantic <section> wrapper used across the Dimimont Home-Care page.
+ * Semantic <section> wrapper used across the DimiMont Home-Care page.
  * - Provides consistent vertical spacing.
  * - Accepts id and aria-* attributes via props for linking and accessibility.
  * - Wraps its content in the standard Container layout.

@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 /**
  * ProjectsSection
  *
- * Displays a selection of Dimimont's best work with cards and galleries.
+ * Displays a selection of DimiMont's best work with cards and galleries.
  */
 export function ProjectsSection() {
   const headerRef = useRef<HTMLDivElement | null>(null);
@@ -47,7 +47,7 @@ export function ProjectsSection() {
   return (
     <SectionShell
       id="projects"
-      aria-label="Dimimont Home-Care projects"
+      aria-label="DimiMont Home-Care projects"
       className="bg-background"
     >
       <div className="space-y-6">
@@ -65,7 +65,7 @@ export function ProjectsSection() {
             Recent work and calm outcomes.
           </h2>
           <p className="max-w-2xl text-base sm:text-lg text-muted-foreground">
-            Browse a selection of projects that show how Dimimont helps
+            Browse a selection of projects that show how Dimi Mont helps
             homeowners move from a stressful list of repairs to a clear,
             finished result.
           </p>

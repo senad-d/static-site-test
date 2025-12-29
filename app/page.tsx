@@ -6,7 +6,7 @@ import { ProjectsSection } from "@/components/sections/projects-section";
 import { ContactSection } from "@/components/sections/contact-section";
 
 /**
- * Home – Dimimont Home-Care single-page layout
+ * Home – DimiMont Home-Care single-page layout
  *
  * Order per PRD:
  * 1. Global sticky header

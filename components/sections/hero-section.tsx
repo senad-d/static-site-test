@@ -15,7 +15,7 @@ export function HeroSection() {
   return (
     <SectionShell
       id="hero"
-      aria-label="Dimimont Home-Care hero"
+      aria-label="DimiMont Home-Care hero"
       className="relative py-0 sm:py-0 lg:py-0"
     >
       {/* Ensure the hero nearly fills the viewport height minus the sticky header,
@@ -26,7 +26,7 @@ export function HeroSection() {
         {/* Background image */}
         <Image
           src={`${prefix}/images/hero-bg.jpg`}
-          alt="Dimimont Home-Care project background"
+          alt="DimiMont Home-Care project background"
           fill
           priority
           className="object-cover"

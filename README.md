@@ -1,12 +1,12 @@
-# Dimimont Home‑Care Marketing Site
+# DimiMont Home‑Care Marketing Site
 
-This is a statically exported [`Next.js`](https://nextjs.org) single‑page marketing site for **Dimimont Home‑Care**. It is built with the App Router, Tailwind CSS, and a small component system, and is intended to be deployed to static hosting (for example Vercel, Netlify, GitHub Pages, or similar).
+This is a statically exported [`Next.js`](https://nextjs.org) single‑page marketing site for **DimiMont Home‑Care**. It is built with the App Router, Tailwind CSS, and a small component system, and is intended to be deployed to static hosting (for example Vercel, Netlify, GitHub Pages, or similar).
 
 The site focuses on:
 
 - A **sticky global header** with navigation and theme toggle  
 - A **hero section** highlighting the core value proposition  
-- An **about section** describing Dimimont's approach  
+- An **about section** describing DimiMont's approach  
 - A **projects section** with real project case studies  
 - A **contact section** with a Mailchimp‑backed "free estimate" form  
 - A **footer** with branding and links  
@@ -95,7 +95,7 @@ The home page [`Home`](app/page.tsx:19) composes the main sections:
 
 1. Sticky `SiteHeader` with navigation and theme toggle  
 2. [`HeroSection`](components/sections/hero-section.tsx:12) with background image and CTA  
-3. About section explaining the Dimimont approach  
+3. About section explaining the DimiMont approach  
 4. [`ProjectsSection`](components/sections/projects-section.tsx) rendering project case studies from [`projects`](lib/projects.ts:11)  
 5. Contact section with a Mailchimp‑backed form  
 6. `SiteFooter` with branding and links  

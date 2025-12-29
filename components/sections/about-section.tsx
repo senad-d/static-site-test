@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 /**
  * AboutSection
  *
- * Explains Dimimont's mission and value proposition with supporting benefits.
+ * Explains DimiMont's mission and value proposition with supporting benefits.
  */
 export function AboutSection() {
   const introRef = useRef<HTMLDivElement | null>(null);
@@ -45,7 +45,7 @@ export function AboutSection() {
   return (
     <SectionShell
       id="about"
-      aria-label="About Dimimont Home-Care"
+      aria-label="About DimiMont Home-Care"
       className="bg-background"
     >
       {/* Section 1: Full-width intro */}
@@ -61,12 +61,12 @@ export function AboutSection() {
           )}
         >
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-foreground">
-            Why homeowners choose Dimimont
+            Why homeowners choose Dimi Mont d.o.o.
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground">
-            Dimimont is a small, focused home-care crew that helps homeowners in
-            Primorsko-goranska, Istria, Primorje and Zagreb keep their homes
-            safe, comfortable and beautiful without the constant stress of a
+            Dimi Mont is a small, focused home-care crew that helps homeowners in
+            Primorsko-goranska, Istria, and Zagreb area to keep their homes
+            comfortable and beautiful without the constant stress of a
             never-ending repair list.
           </p>
         </div>

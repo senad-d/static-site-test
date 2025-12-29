@@ -8,7 +8,7 @@ import { ScrollToContactCta } from "./scroll-to-contact-cta";
 /**
  * SiteHeader
  *
- * Sticky global header with Dimimont logo, primary CTA and theme toggle.
+ * Sticky global header with DimiMont logo, primary CTA and theme toggle.
  * The CTA scrolls smoothly to the contact section (id="contact").
  */
 export function SiteHeader() {

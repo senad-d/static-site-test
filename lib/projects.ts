@@ -19,7 +19,7 @@ export const projects: Project[] = [
     objectives:
       "Provide a relaxing, maintenance-light outdoor space where the homeowners could enjoy coffee and time with grandchildren without worrying about sun exposure or unstable structures.",
     approach:
-      "Dimimont helped prioritize the project within a long repair list, proposed a pergola design that fit the existing house and garden, and handled all structural and finishing work with minimal disruption.",
+      "Dimi Mont helped prioritize the project within a long repair list, proposed a pergola design that fit the existing house and garden, and handled all structural and finishing work with minimal disruption.",
     results:
       "A solid, beautifully finished pergola that felt immediately safe and welcoming. The homeowners reported spending significantly more time outside and worrying less about the elements.",
     imagePaths: [
@@ -35,7 +35,7 @@ export const projects: Project[] = [
     objectives:
       "Resolve unsafe balcony railings and sticking shutters that had become stressful reminders of unfinished repairs.",
     approach:
-      "Dimimont inspected the balcony, replaced weakened elements, reinforced railings to modern safety expectations, and repaired or replaced aging shutters with minimal visual change to the facade.",
+      "Dimi Mont inspected the balcony, replaced weakened elements, reinforced railings to modern safety expectations, and repaired or replaced aging shutters with minimal visual change to the facade.",
     results:
       "A balcony the homeowner once avoided became a comfortable place for everyday use. She reported sleeping better knowing the structure was safe.",
     imagePaths: [
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     objectives:
       "Protect the home exterior from further weather damage while improving curb appeal for a family preparing for retirement.",
     approach:
-      "Dimimont repaired cracked plaster, treated exposed areas, and applied a weather-resistant coating and repainting system designed for coastal conditions.",
+      "Dimi Mont repaired cracked plaster, treated exposed areas, and applied a weather-resistant coating and repainting system designed for coastal conditions.",
     results:
       "The house regained a clean, looked-after appearance and gained an extra layer of protection, reducing the stress of each new storm forecast.",
     imagePaths: [`${prefix}/project-images/project3-1.jpg`],
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     objectives:
       "Address a backlog of interior issues—tired finishes, awkward storage, uneven lighting—without overwhelming the homeowners or requiring a full gut renovation.",
     approach:
-      "Dimimont planned the work in calm, manageable phases, updating surfaces, improving lighting and adjusting storage with special care for accessibility and ease of cleaning.",
+      "Dimi Mont planned the work in calm, manageable phases, updating surfaces, improving lighting and adjusting storage with special care for accessibility and ease of cleaning.",
     results:
       "The couple reported feeling more relaxed and proud to invite family over, noting that the home felt brighter, safer and easier to maintain.",
     imagePaths: [`${prefix}/project-images/project4-1.jpg`],

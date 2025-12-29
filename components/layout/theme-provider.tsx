@@ -11,7 +11,7 @@ import type { ThemeProviderProps } from "next-themes";
  * on <html> / <body> controls the light/dark theme via the
  * Tailwind/shadcn CSS variables defined in globals.css.
  *
- * We default to the Dimimont dark theme and disable system theme to keep
+ * We default to the DimiMont dark theme and disable system theme to keep
  * the marketing page visually consistent with the PRD.
  */
 export function ThemeProvider({

@@ -233,7 +233,15 @@ function ContactInfo() {
       <dl className="space-y-3 text-sm sm:text-base text-muted-foreground">
         <div>
           <dt className="font-medium text-foreground">Address</dt>
-          <dd>Dimimont Home-Care, Primorsko-goranska, Croatia</dd>
+          <dd>Dimi Mont d.o.o, Kralja Tomislava 118A, 51260, Crikvenica, Hrvatska</dd>
+        </div>
+        <div>
+          <dt className="font-medium text-foreground">OIB</dt>
+          <dd>06153067918</dd>
+        </div>
+        <div>
+          <dt className="font-medium text-foreground">MBS</dt>
+          <dd>040486468</dd>
         </div>
         <div>
           <dt className="font-medium text-foreground">Phone</dt>
@@ -241,7 +249,7 @@ function ContactInfo() {
         </div>
         <div>
           <dt className="font-medium text-foreground">Email</dt>
-          <dd>hello@dimimont-home-care.example.com</dd>
+          <dd>hello@dimi-mont.example.com</dd>
         </div>
         <div>
           <dt className="font-medium text-foreground">Hours</dt>

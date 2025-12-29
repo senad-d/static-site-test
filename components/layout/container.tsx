@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
  * Container
  *
  * Constrains content to a readable width and applies horizontal padding
- * consistent across all sections of the Dimimont Home-Care site.
+ * consistent across all sections of the DimiMont Home-Care site.
  */
 export function Container({
   className,

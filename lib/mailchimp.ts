@@ -131,13 +131,13 @@ export async function subscribeToAudience(
       status_if_new: "subscribed",
       status: "subscribed",
       merge_fields: mergeFields,
-      tags: ["dimimont-site"],
+      tags: ["DimiMont-site"],
     });
 
     return {
       success: true,
       message:
-        "You have been added to the Dimimont mailing list. We will follow up with your free estimate details shortly.",
+        "You have been added to the DimiMont mailing list. We will follow up with your free estimate details shortly.",
     };
   } catch (error: unknown) {
     const mcError = extractMailchimpError(error);

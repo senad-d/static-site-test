@@ -1,6 +1,6 @@
 import { Container } from "./container";
 
-const FACEBOOK_URL = "https://facebook.com/dimimont-home-care";
+const FACEBOOK_URL = "https://facebook.com/DimiMont-home-care";
 
 /**
  * SiteFooter
@@ -11,7 +11,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-white/10 bg-background/90">
       <Container className="flex flex-col items-center justify-between gap-2 py-6 text-xs sm:flex-row sm:text-sm text-muted-foreground">
-        <p>© 2025 Dimimont. All rights reserved.</p>
+        <p>© 2025 Dimi Mont d.o.o. All rights reserved.</p>
         <a
           href={FACEBOOK_URL}
           target="_blank"

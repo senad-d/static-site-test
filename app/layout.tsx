@@ -14,15 +14,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dimimont Home-Care | Calm, high-performance web presence",
+  title: "DimiMont Home-Care | Calm, high-performance web presence",
   description:
-    "Single-page portfolio and marketing site for Dimimont Home-Care, showcasing recent work, outcomes, and an easy way to book a free on-site estimate.",
+    "Single-page portfolio and marketing site for DimiMont Home-Care, showcasing recent work, outcomes, and an easy way to book a free on-site estimate.",
   openGraph: {
-    title: "Dimimont Home-Care | Calm, high-performance web presence",
+    title: "DimiMont Home-Care | Calm, high-performance web presence",
     description:
-      "Dimimont Home-Care helps homeowners enjoy their site without technical headaches, with a focus on architecture, performance, and accessibility.",
+      "DimiMont Home-Care helps homeowners enjoy their site without technical headaches, with a focus on architecture, performance, and accessibility.",
     type: "website",
-    url: "https://dimimont-home-care.example.com",
+    url: "https://DimiMont-home-care.example.com",
   },
 };
 
