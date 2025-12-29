@@ -41,6 +41,8 @@ export const projects: Project[] = [
     imagePaths: [
       `${prefix}/project-images/project1-1.jpg`,
       `${prefix}/project-images/project1-2.jpg`,
+      `${prefix}/project-images/project2-1.jpg`,
+      `${prefix}/project-images/project2-2.jpg`,
     ],
   },
   {
@@ -68,6 +70,7 @@ export const projects: Project[] = [
     imagePaths: [
       `${prefix}/project-images/project2-1.jpg`,
       `${prefix}/project-images/project2-2.jpg`,
+      `${prefix}/project-images/project1-1.jpg`,
     ],
   },
   {
@@ -92,7 +95,10 @@ export const projects: Project[] = [
       en: "The house regained a clean, looked-after appearance and gained an extra layer of protection, reducing the stress of each new storm forecast.",
       hr: "Kuća je ponovno dobila uredan, njegovan izgled i dodatni sloj zaštite, što je smanjilo brigu pri svakoj novoj najavi nevremena.",
     },
-    imagePaths: [`${prefix}/project-images/project3-1.jpg`],
+    imagePaths: [
+      `${prefix}/project-images/project3-1.jpg`,
+      `${prefix}/project-images/project1-2.jpg`,
+    ],
   },
   {
     id: "multi-room-interior-refresh-istria",

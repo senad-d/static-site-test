@@ -54,9 +54,6 @@ export function ProjectGallery({ imagePaths, title }: ProjectGalleryProps) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <div className="space-y-3">
-        <p className="text-sm font-medium text-muted-foreground">
-          Project photos
-        </p>
         <div
           className={cn(
             "flex gap-3 overflow-x-auto pb-2",
