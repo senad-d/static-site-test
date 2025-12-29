@@ -47,12 +47,12 @@ export function HeroSection() {
                     "motion-safe:animate-fadeInUp motion-safe:duration-300",
                   ].join(" ")}
                 >
-                  Enjoy your site without the technical headaches.
+                  Enjoy your home without the technical headaches.
                 </h1>
 
                 <p className="max-w-xl text-base sm:text-lg text-slate-200/90 motion-safe:animate-fadeInUp motion-safe:duration-300 motion-safe:delay-100">
-                  We take care of the architecture, performance, and accessibility
-                  so you can focus on your clients and content.
+                  From full home renovations to carefully executed outdoor projects like pergolas, 
+                  we deliver clean finishes, solid construction, and reliable timelines.
                 </p>
               </div>
 

@@ -93,7 +93,7 @@ export function AboutSection() {
             </CardHeader>
             <CardContent className="text-sm sm:text-base text-muted-foreground">
               You get clear start dates, realistic timelines and updates in
-              simple language — no jargon, no surprises.
+              simple language; no jargon, no surprises.
             </CardContent>
           </Card>
 
