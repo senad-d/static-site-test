@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { Project } from "@/lib/projects";
+import { useLanguage } from "@/components/layout/language-provider";
 import {
   Card,
   CardContent,
@@ -27,12 +28,25 @@ type ProjectCardProps = {
  * Objectives, approach and results are shown inside an Accordion.
  */
 export function ProjectCard({ project }: ProjectCardProps) {
+  const { language } = useLanguage();
+
+  const detailsLabel =
+    language === "en" ? "Project details" : "Detalji projekta";
+  const objectivesLabel =
+    language === "en" ? "Objectives" : "Ciljevi";
+  const approachLabel =
+    language === "en" ? "Approach" : "Pristup";
+  const resultsLabel =
+    language === "en" ? "Results" : "Rezultati";
+
   return (
     <Card className="flex h-full flex-col bg-card/90 border-border/70">
       <CardHeader>
-        <CardTitle className="text-lg sm:text-xl">{project.title}</CardTitle>
+        <CardTitle className="text-lg sm:text-xl">
+          {project.title[language]}
+        </CardTitle>
         <CardDescription className="text-sm sm:text-base">
-          {project.description}
+          {project.description[language]}
         </CardDescription>
       </CardHeader>
 
@@ -44,26 +58,26 @@ export function ProjectCard({ project }: ProjectCardProps) {
         >
           <AccordionItem value="details">
             <AccordionTrigger className="text-sm font-medium">
-              Project details
+              {detailsLabel}
             </AccordionTrigger>
             <AccordionContent className="flex flex-col gap-4 text-sm sm:text-base text-muted-foreground">
               <div>
                 <h3 className="mb-1 text-sm font-semibold text-foreground">
-                  Objectives
+                  {objectivesLabel}
                 </h3>
-                <p>{project.objectives}</p>
+                <p>{project.objectives[language]}</p>
               </div>
               <div>
                 <h3 className="mb-1 text-sm font-semibold text-foreground">
-                  Approach
+                  {approachLabel}
                 </h3>
-                <p>{project.approach}</p>
+                <p>{project.approach[language]}</p>
               </div>
               <div>
                 <h3 className="mb-1 text-sm font-semibold text-foreground">
-                  Results
+                  {resultsLabel}
                 </h3>
-                <p>{project.results}</p>
+                <p>{project.results[language]}</p>
               </div>
             </AccordionContent>
           </AccordionItem>

@@ -1,4 +1,7 @@
+"use client";
+
 import { Container } from "./container";
+import { useLanguage } from "@/components/layout/language-provider";
 
 const FACEBOOK_URL = "https://facebook.com/DimiMont-home-care";
 
@@ -8,15 +11,27 @@ const FACEBOOK_URL = "https://facebook.com/DimiMont-home-care";
  * Bottom-of-page footer with copyright and Facebook link.
  */
 export function SiteFooter() {
+  const { language } = useLanguage();
+
+  const copyrightText =
+    language === "en"
+      ? "© 2025 Dimi Mont d.o.o. All rights reserved."
+      : "© 2025 Dimi Mont d.o.o. Sva prava pridržana.";
+
+  const facebookAriaLabel =
+    language === "en"
+      ? "Visit our Facebook page"
+      : "Posjetite našu Facebook stranicu";
+
   return (
     <footer className="border-t border-white/10 bg-background/90">
       <Container className="flex flex-col items-center justify-between gap-2 py-6 text-xs sm:flex-row sm:text-sm text-muted-foreground">
-        <p>© 2025 Dimi Mont d.o.o. All rights reserved.</p>
+        <p>{copyrightText}</p>
         <a
           href={FACEBOOK_URL}
           target="_blank"
           rel="noreferrer"
-          aria-label="Visit our Facebook page"
+          aria-label={facebookAriaLabel}
           className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-accent text-accent-foreground hover:bg-accent/90 transition-colors"
         >
           <svg

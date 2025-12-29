@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 
 import { SectionShell } from "@/components/layout/section-shell";
 import { ScrollToContactCta } from "@/components/layout/scroll-to-contact-cta";
+import { useLanguage } from "@/components/layout/language-provider";
 
 const prefix = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -12,10 +15,35 @@ const prefix = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
  * supporting copy, and primary CTA that scrolls to the contact section.
  */
 export function HeroSection() {
+  const { language } = useLanguage();
+
+  const ariaLabel =
+    language === "en"
+      ? "DimiMont Home-Care hero"
+      : "DimiMont Home-Care početni prikaz";
+
+  const backgroundAlt =
+    language === "en"
+      ? "DimiMont Home-Care project background"
+      : "Pozadinska slika projekta DimiMont Home-Care";
+
+  const heading =
+    language === "en"
+      ? "Enjoy your home without the technical headaches."
+      : "Uživajte u svom domu bez tehničkih briga.";
+
+  const bodyText =
+    language === "en"
+      ? "From full home renovations to carefully executed outdoor projects like pergolas, we deliver clean finishes, solid construction, and reliable timelines."
+      : "Od potpunih renovacija kuće do pažljivo izvedenih vanjskih projekata poput pergola, isporučujemo čiste završne radove, čvrstu konstrukciju i pouzdane rokove.";
+
+  const ctaLabel =
+    language === "en" ? "Schedule Service" : "Dogovori uslugu";
+
   return (
     <SectionShell
       id="hero"
-      aria-label="DimiMont Home-Care hero"
+      aria-label={ariaLabel}
       className="relative py-0 sm:py-0 lg:py-0"
     >
       {/* Ensure the hero nearly fills the viewport height minus the sticky header,
@@ -26,7 +54,7 @@ export function HeroSection() {
         {/* Background image */}
         <Image
           src={`${prefix}/images/hero-bg.jpg`}
-          alt="DimiMont Home-Care project background"
+          alt={backgroundAlt}
           fill
           priority
           className="object-cover"
@@ -47,12 +75,11 @@ export function HeroSection() {
                     "motion-safe:animate-fadeInUp motion-safe:duration-300",
                   ].join(" ")}
                 >
-                  Enjoy your home without the technical headaches.
+                  {heading}
                 </h1>
 
                 <p className="max-w-xl text-base sm:text-lg text-slate-200/90 motion-safe:animate-fadeInUp motion-safe:duration-300 motion-safe:delay-100">
-                  From full home renovations to carefully executed outdoor projects like pergolas, 
-                  we deliver clean finishes, solid construction, and reliable timelines.
+                  {bodyText}
                 </p>
               </div>
 
@@ -62,7 +89,7 @@ export function HeroSection() {
                   size="lg"
                   className="shadow-lg motion-safe:transition-transform motion-safe:duration-200 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-xl"
                 >
-                  Schedule Service
+                  {ctaLabel}
                 </ScrollToContactCta>
               </div>
             </div>

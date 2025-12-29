@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { useLanguage } from "@/components/layout/language-provider";
 
 const prefix = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export function Logo({ className }: { className?: string }) {
   const { resolvedTheme } = useTheme();
+  const { language } = useLanguage();
 
   const logoFile =
     resolvedTheme === "dark"
@@ -24,10 +26,16 @@ export function Logo({ className }: { className?: string }) {
     });
   }
 
+  const ariaLabel = "DimiMont Home-Care";
+  const altText =
+    language === "en"
+      ? "DimiMont Home-Care logo"
+      : "Logotip DimiMont Home-Care";
+
   return (
     <div
       className={["cursor-pointer", className].filter(Boolean).join(" ")}
-      aria-label="DimiMont Home-Care"
+      aria-label={ariaLabel}
       role="button"
       tabIndex={0}
       onClick={scrollToTop}
@@ -40,7 +48,7 @@ export function Logo({ className }: { className?: string }) {
     >
       <Image
         src={src}
-        alt="DimiMont Home-Care logo"
+        alt={altText}
         width={200}
         height={50}
         priority

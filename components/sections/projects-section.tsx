@@ -7,6 +7,7 @@ import { projects } from "@/lib/projects";
 import { ProjectCard } from "@/components/projects/project-card";
 import { ProjectGallery } from "@/components/projects/project-gallery";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/components/layout/language-provider";
 
 /**
  * ProjectsSection
@@ -14,6 +15,7 @@ import { cn } from "@/lib/utils";
  * Displays a selection of DimiMont's best work with cards and galleries.
  */
 export function ProjectsSection() {
+  const { language } = useLanguage();
   const headerRef = useRef<HTMLDivElement | null>(null);
   const [hasEntered, setHasEntered] = useState(
     () =>
@@ -44,10 +46,25 @@ export function ProjectsSection() {
     return () => observer.disconnect();
   }, []);
 
+  const ariaLabel =
+    language === "en"
+      ? "DimiMont Home-Care projects"
+      : "Projekti DimiMont Home-Care";
+
+  const headingText =
+    language === "en"
+      ? "Recent work and calm outcomes."
+      : "Nedavni radovi i mirni ishodi.";
+
+  const introText =
+    language === "en"
+      ? "Browse a selection of projects that show how Dimi Mont helps homeowners move from a stressful list of repairs to a clear, finished result."
+      : "Pogledajte odabrane projekte koji pokazuju kako Dimi Mont pomaže vlasnicima kuća da se s liste stresnih popravaka prebace na jasan, dovršen rezultat.";
+
   return (
     <SectionShell
       id="projects"
-      aria-label="DimiMont Home-Care projects"
+      aria-label={ariaLabel}
       className="bg-background"
     >
       <div className="space-y-6">
@@ -62,12 +79,10 @@ export function ProjectsSection() {
           )}
         >
           <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-foreground">
-            Recent work and calm outcomes.
+            {headingText}
           </h2>
           <p className="max-w-2xl text-base sm:text-lg text-muted-foreground">
-            Browse a selection of projects that show how Dimi Mont helps
-            homeowners move from a stressful list of repairs to a clear,
-            finished result.
+            {introText}
           </p>
         </div>
 
@@ -80,7 +95,7 @@ export function ProjectsSection() {
               <ProjectCard project={project} />
               <ProjectGallery
                 imagePaths={project.imagePaths}
-                title={project.title}
+                title={project.title[language]}
               />
             </div>
           ))}
