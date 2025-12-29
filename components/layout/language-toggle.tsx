@@ -6,7 +6,7 @@ import { useLanguage } from "@/components/layout/language-provider";
 export function LanguageToggle() {
   const { language, toggleLanguage } = useLanguage();
 
-  const label = language === "en" ? "EN" : "HR";
+  const label = language === "en" ? "HR" : "EN";
   const ariaLabel =
     language === "en"
       ? "Switch site language to Croatian"
