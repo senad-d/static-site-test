@@ -28,7 +28,7 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export function SiteShell() {
-  const [language, setLanguage] = React.useState<Language>("en");
+  const [language, setLanguage] = React.useState<Language>("hr");
 
   React.useEffect(() => {
     const stored = window.localStorage.getItem(languageStorageKey);
