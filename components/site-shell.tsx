@@ -23,7 +23,9 @@ type Language = "en" | "hr";
 
 const languageStorageKey = "dimimont-language";
 
-const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export function SiteShell() {
   const [language, setLanguage] = React.useState<Language>("en");
@@ -96,7 +98,7 @@ export function SiteShell() {
         >
           <div className="absolute inset-0">
             <Image
-              src="/assets/hero.jpg"
+              src={`${basePath}/assets/hero.jpg`}
               alt=""
               fill
               priority
@@ -104,7 +106,7 @@ export function SiteShell() {
               className="hidden object-cover md:block"
             />
             <Image
-              src="/assets/hero-mobile.jpg"
+              src={`${basePath}/assets/hero-mobile.jpg`}
               alt=""
               fill
               priority
@@ -168,10 +170,20 @@ export function SiteShell() {
           id="about"
           className="relative overflow-hidden bg-background py-24"
         >
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-[url('/assets/about-bg-light.svg')] bg-cover bg-center dark:bg-[url('/assets/about-bg-dark.svg')]"
-          />
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+            <div
+              className="absolute inset-0 bg-cover bg-center dark:hidden"
+              style={{
+                backgroundImage: `url(${basePath}/assets/about-bg-light.svg)`,
+              }}
+            />
+            <div
+              className="absolute inset-0 hidden bg-cover bg-center dark:block"
+              style={{
+                backgroundImage: `url(${basePath}/assets/about-bg-dark.svg)`,
+              }}
+            />
+          </div>
           <div className="relative mx-auto grid w-full max-w-6xl gap-12 px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
             <div>
               <h2
@@ -249,19 +261,24 @@ export function SiteShell() {
                       className="w-full group"
                     >
                       <CarouselContent>
-                        {project.images.map((src, imageIndex) => (
-                          <CarouselItem key={`${project.title}-${src}`}>
-                            <div className="relative h-52 w-full overflow-hidden rounded-2xl border border-white/10 bg-black/30 sm:h-60">
-                              <Image
-                                src={src}
-                                alt={`${project.title} gallery image ${imageIndex + 1}`}
-                                fill
-                                className="object-cover"
-                                sizes="(min-width: 1024px) 50vw, 100vw"
-                              />
-                            </div>
-                          </CarouselItem>
-                        ))}
+                        {project.images.map((src, imageIndex) => {
+                          const imageSrc = `${basePath}${src}`;
+                          return (
+                            <CarouselItem
+                              key={`${project.title}-${src}`}
+                            >
+                              <div className="relative h-52 w-full overflow-hidden rounded-2xl border border-white/10 bg-black/30 sm:h-60">
+                                <Image
+                                  src={imageSrc}
+                                  alt={`${project.title} gallery image ${imageIndex + 1}`}
+                                  fill
+                                  className="object-cover"
+                                  sizes="(min-width: 1024px) 50vw, 100vw"
+                                />
+                              </div>
+                            </CarouselItem>
+                          );
+                        })}
                       </CarouselContent>
                       <CarouselPrevious className="hidden sm:flex left-4 top-1/2 size-10 -translate-y-1/2 border-white/30 bg-black/70 text-white shadow-lg backdrop-blur opacity-0 transition-opacity duration-200 group-hover:opacity-100 focus-visible:opacity-100 hover:bg-primary hover:text-primary-foreground [&_svg]:size-5" />
                       <CarouselNext className="hidden sm:flex right-4 left-auto top-1/2 size-10 -translate-y-1/2 border-white/30 bg-black/70 text-white shadow-lg backdrop-blur opacity-0 transition-opacity duration-200 group-hover:opacity-100 focus-visible:opacity-100 hover:bg-primary hover:text-primary-foreground [&_svg]:size-5" />
@@ -309,8 +326,21 @@ export function SiteShell() {
         >
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 rotate-180 bg-[url('/assets/about-bg-light.svg')] bg-cover bg-center dark:bg-[url('/assets/about-bg-dark.svg')]"
-          />
+            className="pointer-events-none absolute inset-0 rotate-180"
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center dark:hidden"
+              style={{
+                backgroundImage: `url(${basePath}/assets/about-bg-light.svg)`,
+              }}
+            />
+            <div
+              className="absolute inset-0 hidden bg-cover bg-center dark:block"
+              style={{
+                backgroundImage: `url(${basePath}/assets/about-bg-dark.svg)`,
+              }}
+            />
+          </div>
           <div className="relative mx-auto grid w-full max-w-6xl gap-10 px-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
             <div>
               <h2
