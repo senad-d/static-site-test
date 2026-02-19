@@ -1,10 +1,8 @@
 import type { NextConfig } from "next";
 
-const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
-const repo = process.env.GITHUB_REPOSITORY?.split("/")[1];
-const isUserOrOrgPage = !!repo && repo.endsWith(".github.io");
-
-const basePath = isGitHubActions && repo && !isUserOrOrgPage ? `/${repo}` : "";
+const isProd = process.env.NODE_ENV === "production";
+const repo = "static-site-test";
+const basePath = isProd ? `/${repo}` : "";
 
 const nextConfig: NextConfig = {
   output: "export",
