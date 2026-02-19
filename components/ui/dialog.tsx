@@ -1,10 +1,11 @@
 "use client"
 
 import * as React from "react"
-import * as DialogPrimitive from "@radix-ui/react-dialog"
 import { XIcon } from "lucide-react"
+import { Dialog as DialogPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
 
 function Dialog({
   ...props
@@ -38,7 +39,7 @@ function DialogOverlay({
     <DialogPrimitive.Overlay
       data-slot="dialog-overlay"
       className={cn(
-        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50 backdrop-blur-sm backdrop-saturate-150",
+        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50",
         className
       )}
       {...props}
@@ -90,7 +91,14 @@ function DialogHeader({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
-function DialogFooter({ className, ...props }: React.ComponentProps<"div">) {
+function DialogFooter({
+  className,
+  showCloseButton = false,
+  children,
+  ...props
+}: React.ComponentProps<"div"> & {
+  showCloseButton?: boolean
+}) {
   return (
     <div
       data-slot="dialog-footer"
@@ -99,7 +107,14 @@ function DialogFooter({ className, ...props }: React.ComponentProps<"div">) {
         className
       )}
       {...props}
-    />
+    >
+      {children}
+      {showCloseButton && (
+        <DialogPrimitive.Close asChild>
+          <Button variant="outline">Close</Button>
+        </DialogPrimitive.Close>
+      )}
+    </div>
   )
 }
 

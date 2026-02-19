@@ -1,30 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Mono, Space_Grotesk } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
-import { ThemeProvider } from "../components/layout/theme-provider";
-import { LanguageProvider } from "../components/layout/language-provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const dmMono = DM_Mono({
+  variable: "--font-dm-mono",
+  weight: ["400", "500"],
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "DimiMont Home-Care | Calm, high-performance web presence",
+  title: "Dimimont Home-Care",
   description:
-    "Single-page portfolio and marketing site for DimiMont Home-Care, showcasing recent work, outcomes, and an easy way to book a free on-site estimate.",
-  openGraph: {
-    title: "DimiMont Home-Care | Calm, high-performance web presence",
-    description:
-      "DimiMont Home-Care helps homeowners enjoy their site without technical headaches, with a focus on architecture, performance, and accessibility.",
-    type: "website",
-    url: "https://DimiMont-home-care.example.com",
-  },
+    "Dimimont is a home-care crew helping homeowners in Primorsko-goranska, Istria, Primorje, and Zagreb.",
 };
 
 export default function RootLayout({
@@ -35,10 +28,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased`}
+        className={`${spaceGrotesk.variable} ${dmMono.variable} min-h-screen bg-background text-foreground antialiased`}
+        suppressHydrationWarning
       >
-        <ThemeProvider>
-          <LanguageProvider>{children}</LanguageProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
         </ThemeProvider>
       </body>
     </html>
